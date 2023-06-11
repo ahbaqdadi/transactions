@@ -1,10 +1,10 @@
 apiVersion: 1
 
 datasources:
-  - name: PostgreSQL
-    type: postgres
+  - name: Mysql
+    type: mysql
     access: proxy
-    url: database:5432
+    url: database
     database: app
     user: app
     secureJsonData:
