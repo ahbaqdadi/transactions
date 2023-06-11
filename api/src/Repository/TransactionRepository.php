@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Transaction;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query\ResultSetMappingBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -39,28 +40,21 @@ class TransactionRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Transaction[] Returns an array of Transaction objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('t')
-//            ->andWhere('t.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('t.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?Transaction
-//    {
-//        return $this->createQueryBuilder('t')
-//            ->andWhere('t.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    public function calculateNetTransactionsForAccount(string $accountId)
+    {
+        $rsm = new ResultSetMappingBuilder($this->getEntityManager());
+        $rsm->addScalarResult('netTotal', 'netTotal');
+    
+        $sql = "
+            SELECT SUM(CASE WHEN t.type = :deposit THEN t.amount ELSE -t.amount END) as netTotal
+            FROM transaction t
+            WHERE t.account_id = UUID_TO_BIN(:accountId)
+        ";
+    
+        $query = $this->getEntityManager()->createNativeQuery($sql, $rsm);
+        $query->setParameter('accountId', $accountId);
+        $query->setParameter('deposit', Transaction::DEPOSIT);
+    
+        return $query->getSingleScalarResult();
+    }
 }
