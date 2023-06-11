@@ -21,14 +21,7 @@ const Welcome = () => (
             </span>
           </h1>
           <p className="text-cyan-200 my-5 text-lg">
-            This container will host your{" "}
-            <a
-              className="text-white font-bold hover:bg-cyan-500"
-              href="https://nextjs.org/"
-            >
-              <b>Next.js</b>
-            </a>{" "}
-            application. Learn how to create your first API and generate a PWA:
+          This is a transaction history project using MySQL's memory engine and monitoring tools, built on the API Platform and Symfony, featuring RESTful API, GraphQL, and comprehensive documentation.
           </p>
           <div className="flex justify-center flex-wrap | lg:justify-start lg:grid lg:gap-5 lg:grid-cols-5">
           <a
@@ -103,6 +96,31 @@ const Welcome = () => (
           <a
             target="_blank"
             rel="noopener noreferrer"
+            href="https://localhost/docs.jsonld"
+            className="bg-white text-cyan-700 px-8 py-3 relative overflow-hidden transition-all font-extrabold text-lg group hover:pl-4 hover:pr-12"
+          >
+            Json LD
+            <div className="absolute left-full top-0 w-7 h-full bg-cyan-200 transition-all flex p-1 justify-center items-center group-hover:-translate-x-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+          </a>
+          </div>
+<br />
+          <div className="flex justify-center flex-wrap | lg:justify-start lg:grid lg:gap-5 lg:grid-cols-5">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
             href="http://localhost:3000/d/liz0yRCZz/symfony-logger-dashboard?orgId=1"
             className="bg-white text-cyan-700 px-8 py-3 relative overflow-hidden transition-all font-extrabold text-lg group hover:pl-4 hover:pr-12"
           >
@@ -130,6 +148,52 @@ const Welcome = () => (
             className="bg-white text-cyan-700 px-8 py-3 relative overflow-hidden transition-all font-extrabold text-lg group hover:pl-4 hover:pr-12"
           >
             Transaction Grafana Panel
+            <div className="absolute left-full top-0 w-7 h-full bg-cyan-200 transition-all flex p-1 justify-center items-center group-hover:-translate-x-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+          </a>
+
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://localhost/graphql/graphiql?query=%7B%0A%20%20transactions%7B%0A%20%20%20%20id%0A%20%20%20%20amount%0A%20%20%20%20type%0A%20%20%20%20created_at%0A%20%20%7D%0A%7D"
+            className="bg-white text-cyan-700 px-8 py-3 relative overflow-hidden transition-all font-extrabold text-lg group hover:pl-4 hover:pr-12"
+          >
+            GraphQL Editor
+            <div className="absolute left-full top-0 w-7 h-full bg-cyan-200 transition-all flex p-1 justify-center items-center group-hover:-translate-x-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+          </a>
+
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://localhost/docs?ui=re_doc"
+            className="bg-white text-cyan-700 px-8 py-3 relative overflow-hidden transition-all font-extrabold text-lg group hover:pl-4 hover:pr-12"
+          >
+            Re Doc
             <div className="absolute left-full top-0 w-7 h-full bg-cyan-200 transition-all flex p-1 justify-center items-center group-hover:-translate-x-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
